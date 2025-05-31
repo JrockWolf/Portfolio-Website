@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Jared Butler | Tech Portfolio</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <!-- Taskbar -->
+    <div class="taskbar">
+        <button onclick="openPopup('about')">About Me</button>
+        <button onclick="openPopup('skills')">Skills</button>
+        <button onclick="openPopup('server')">TrueNAS Server</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="matrix-terminal" id="terminal">
+        <img id="terminal-photo" src="my_photo.jpg" alt="Jared Butler" />
+        <div id="terminal-text"></div>
+    </div>
+
+    <!-- Popup Windows Container -->
+    <div id="popup-container"></div>
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+:root {
+    --purple-primary: #2A0A45;
+    --purple-accent: #6C3082;
+    --neon-purple: #BC13FE;
+    --terminal-green: #00FF00;
+}
+
+body {
+    background: linear-gradient(120deg, #000 60%, var(--purple-primary) 100%);
+    color: #fff;
+    font-family: 'Segoe UI', 'Courier New', monospace;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.taskbar {
+    background: #18122B;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    box-shadow: 0 2px 10px #0008;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.taskbar button {
+    background: var(--purple-accent);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 22px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 0 8px var(--neon-purple);
+    transition: background 0.2s, transform 0.2s;
+}
+
+.taskbar button:hover {
+    background: var(--neon-purple);
+    color: #18122B;
+    transform: scale(1.08);
+}
+
+#main-content {
+    padding: 40px 10vw;
+    min-height: 60vh;
+}
+
+.matrix-terminal {
+    font-family: 'Courier New', monospace;
+    color: var(--terminal-green);
+    font-size: 1.2rem;
+    background: #000a;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px var(--purple-accent);
+    min-height: 120px;
+    margin-bottom: 30px;
+}
+
+/* Popup Windows */
+#popup-container {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.window-popup {
+    position: absolute;
+    top: 80px;
+    left: 50vw;
+    transform: translateX(-50%);
+    background: #18122B;
+    color: #fff;
+    border: 2px solid var(--neon-purple);
+    border-radius: 10px;
+    min-width: 320px;
+    max-width: 90vw;
+    box-shadow: 0 0 24px 2px var(--neon-purple);
+    z-index: 101;
+    pointer-events: all;
+    animation: popupAppear 0.35s;
+}
+
+@keyframes popupAppear {
+    from { opacity: 0; transform: scale(0.85) translateX(-50%);}
+    to { opacity: 1; transform: scale(1) translateX(-50%);}
+}
+
+.window-header {
+    background: var(--purple-accent);
+    padding: 12px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px 10px 0 0;
+    cursor: move;
+    user-select: none;
+}
+
+.window-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.window-header button {
+    background: #000;
+    color: var(--neon-purple);
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.window-header button:hover {
+    background: var(--neon-purple);
+    color: #18122B;
+}
+
+.window-content {
+    padding: 22px 18px 18px 18px;
+    font-size: 1rem;
+}
+
+.skill-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.skill-chip {
+    background: var(--neon-purple);
+    color: #18122B;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 0 8px var(--purple-accent);
+}
+
+.os-grid {
+    display: flex;
+    gap: 18px;
+    margin: 14px 0;
+}
+
+.os-icon {
+    width: 48px;
+    height: 48px;
+    filter: drop-shadow(0 0 4px var(--neon-purple));
+    border-radius: 8px;
+    background: #fff1;
+    padding: 6px;
+    transition: transform 0.2s;
+}
+.os-icon:hover {
+    transform: scale(1.12) rotate(-3deg);
+    box-shadow: 0 0 10px var(--neon-purple);
+}
+
+ul {
+    margin: 0 0 0 18px;
+    padding: 0;
+    list-style: disc;
+}
+
+#terminal-photo {
+    display: block;
+    margin: 0 auto 18px auto;
+    width: 110px;          /* or try 120px, adjust as you like */
+    height: 110px;
+    border-radius: 50%;
+    border: 3px solid var(--neon-purple);
+    box-shadow: 0 0 18px var(--purple-accent);
+    object-fit: cover;
+    max-width: 100%;
+}
