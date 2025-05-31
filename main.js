@@ -76,10 +76,13 @@ function getPopupContent(type) {
     if (type === 'about') {
         return `
             <p>
-                <strong>Hello!</strong> I'm <b>Jared Butler</b>, a Black and Italian college student at Rider University, majoring in Computer Science and a minor in Cybersecurity, with a deep passion for technology and IT.<br>
-                I thrive on solving problems, learning new systems, and building cool things.<br>
-                I'm highly skilled across all major operating systems and love tinkering with servers and networks.<br>
-                My goal is to create innovative solutions that make a difference witin the tech community.
+            <strong>Hello there!</strong> I'm <b>Jared Butler</b>, a Black and Italian college student at Rider University, majoring in Computer Science with a minor in Cybersecurity. My passion for technology and IT drives me to constantly explore new tools and systems, always seeking to expand my knowledge and skills.
+
+            I thrive on solving complex problems, whether it’s debugging code, optimizing network performance, or designing secure digital environments. I have hands-on experience maintaining and administering servers using a variety of Linux distributions, including Arch, Debian, and Fedora. This exposure has given me a strong command of system configuration, shell scripting, and troubleshooting across different operating systems.
+
+            Beyond the classroom, I love tinkering with servers and networks, setting up virtual labs, and experimenting with new open-source technologies. My technical toolkit also includes proficiency in Windows and macOS environments, making me adaptable and versatile in any IT setting.
+
+            I’m deeply committed to building innovative solutions that have a real impact within the tech community. Whether collaborating on group projects, contributing to open-source initiatives, or mentoring peers, I strive to make technology more accessible, secure, and meaningful for everyone.
             </p>
             <div class="os-grid">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg" class="os-icon" title="Windows" alt="Windows">
@@ -101,7 +104,9 @@ function getPopupContent(type) {
             <p>
                 <b>Web:</b> Responsive layouts, interactive UI, modern CSS<br>
                 <b>Programming:</b> OOP, scripting, automation, debugging<br>
-                <b>IT:</b> Networking, virtualization, system administration
+                <b>IT:</b> Networking, virtualization, system administration, PC fixing/maintenance<br>
+                <b>Tools:</b> Git, Docker, VS Code, Linux CLI, Windows PowerShell,  VirtualBox, VMware, QEMU, TrueNAS, Proxmox <br>
+                <b>Soft Skills:</b> Problem-solving, teamwork, communication, adaptability 
             </p>
         `;
     }
@@ -109,9 +114,8 @@ function getPopupContent(type) {
         return `
             <h4>TrueNAS Server</h4>
             <ul>
-                <li>24TB ZFS Storage Array</li>
+                <li>4TB ZFS Raid1/Mirror Storage Array</li>
                 <li>Docker, VMs, Media Streaming</li>
-                <li>10GbE Fiber Networking</li>
                 <li>Automated Backups & Snapshots</li>
             </ul>
             <p>
