@@ -110,17 +110,52 @@ function getPopupContent(type) {
             </p>
         `;
     }
-    if (type === 'server') {
+    if (type === 'projects') {
         return `
-            <h4>TrueNAS Server</h4>
-            <ul>
-                <li>4TB ZFS Raid1/Mirror Storage Array</li>
-                <li>Docker, VMs, Media Streaming</li>
-                <li>Automated Backups & Snapshots</li>
-            </ul>
-            <p>
-                I run my own TrueNAS server for storage, virtualization, and media. I'm comfortable with advanced IT setups and troubleshooting.
-            </p>
+            <div style="max-height: 70vh; overflow-y: auto;">
+                <h4>🖥️ TrueNAS Server</h4>
+                <ul>
+                    <li>4TB ZFS Raid1/Mirror Storage Array</li>
+                    <li>Docker, VMs, Media Streaming</li>
+                    <li>Automated Backups & Snapshots</li>
+                </ul>
+                <p>
+                    I run my own TrueNAS server for storage, virtualization, and media. I'm comfortable with advanced IT setups and troubleshooting.
+                </p>
+                
+                <hr style="border: 1px solid var(--purple-accent); margin: 24px 0;">
+                
+                <h4>🤖 Log Analysis Helper Bot</h4>
+                <p>
+                    An LLM-powered log analysis assistant designed for security education and small Security Operations Centers (SOCs). 
+                    This Python-based tool helps analyze security logs using AI to identify threats and generate actionable insights.
+                </p>
+                <h4>Key Features:</h4>
+                <ul>
+                    <li><strong>Multi-Format Support:</strong> Parses text, JSON, and CSV log files</li>
+                    <li><strong>AI-Powered Analysis:</strong> Integrates with OpenAI, Perplexity, Gemini, DeepSeek, or local HuggingFace models</li>
+                    <li><strong>Security Event Detection:</strong> Identifies common security events and suspicious activities</li>
+                    <li><strong>Simulated Log Generator:</strong> Creates synthetic logs for testing and training</li>
+                    <li><strong>Evaluation Metrics:</strong> Precision/recall/F1 testing harness for accuracy</li>
+                    <li><strong>Plain-Language Summaries:</strong> Generates human-readable security reports</li>
+                </ul>
+                <h4>Technologies:</h4>
+                <div class="skill-grid">
+                    <div class="skill-chip">Python</div>
+                    <div class="skill-chip">AI/LLM</div>
+                    <div class="skill-chip">OpenAI API</div>
+                    <div class="skill-chip">Cybersecurity</div>
+                    <div class="skill-chip">Log Analysis</div>
+                </div>
+                <p>
+                    <strong>Use Case:</strong> This tool is particularly valuable for IT and cybersecurity professionals 
+                    who need to quickly analyze large volumes of security logs. It can process local log files privately 
+                    and supports various AI providers based on your preferences and API availability.
+                </p>
+                <p>
+                    <a href="https://github.com/JrockWolf/LogAnalysisBot" target="_blank" style="color: var(--neon-purple); text-decoration: none; font-weight: bold;">🔗 View on GitHub</a>
+                </p>
+            </div>
         `;
     }
     return '';
