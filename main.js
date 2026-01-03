@@ -39,6 +39,18 @@ window.addEventListener('DOMContentLoaded', () => {
     typeLine();
 });
 
+// --- Google Translate Initialization ---
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+        {
+            pageLanguage: 'en',
+            includedLanguages: 'en,es,fr,de,it,pt,zh-CN,ja,ko,ar,hi,ru',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        },
+        'google_translate_element'
+    );
+}
+
 // --- Popup Window Logic ---
 const popups = {};
 
