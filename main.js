@@ -11,13 +11,9 @@ const terminalText = [
     "Feel free to reach out for collaboration or just to say hi! Would love to hear from you or just chat about tech.",
 ];
 
-// Get the terminal container
+// Get terminal elements (div already exists in HTML)
 let terminal = document.getElementById('terminal');
-
-// Create a new div for terminal text animation, after the photo
-let terminalTextDiv = document.createElement('div');
-terminalTextDiv.id = 'terminal-text';
-terminal.appendChild(terminalTextDiv);
+let terminalTextDiv = document.getElementById('terminal-text');
 
 let line = 0, char = 0;
 
@@ -25,11 +21,11 @@ function typeLine() {
     if (line < terminalText.length) {
         if (char < terminalText[line].length) {
             terminalTextDiv.innerHTML += terminalText[line][char++];
-            setTimeout(typeLine, 30);
+            setTimeout(typeLine, 18);
         } else {
             terminalTextDiv.innerHTML += "<br>";
             line++; char = 0;
-            setTimeout(typeLine, 500);
+            setTimeout(typeLine, 250);
         }
     }
 }
@@ -112,61 +108,56 @@ function getPopupContent(type) {
                 <div class="skill-chip">Java</div>
                 <div class="skill-chip">C/C#</div>
                 <div class="skill-chip">Python</div>
+                <div class="skill-chip skill-chip-certified"><a href="https://www.linkedin.com/posts/jared-butler-04a04424a_certificate-of-completion-activity-7454239073839529984-w47n?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD2V_zoBwYjMLaYtJc4IQ9dNZ5O-AaF3oLA" target="_blank" rel="noopener noreferrer" title="View Snowflake Certificate on LinkedIn">❄️ Snowflake 🏅</a></div>
             </div>
             <p>
                 <b>Web:</b> Responsive layouts, interactive UI, modern CSS<br>
                 <b>Programming:</b> OOP, scripting, automation, debugging<br>
                 <b>IT:</b> Networking, virtualization, system administration, PC fixing/maintenance<br>
-                <b>Tools:</b> Git, Docker, VS Code, Linux CLI, Windows PowerShell,  VirtualBox, VMware, QEMU, TrueNAS, Proxmox <br>
-                <b>Soft Skills:</b> Problem-solving, teamwork, communication, adaptability 
+                <b>Tools:</b> Git, Docker, VS Code, Linux CLI, Windows PowerShell, VirtualBox, VMware, QEMU, TrueNAS, Proxmox, Snowflake<br>
+                <b>Soft Skills:</b> Problem-solving, teamwork, communication, adaptability
             </p>
         `;
     }
     if (type === 'projects') {
         return `
-            <div style="max-height: 70vh; overflow-y: auto;">
-                <h4>🖥️ TrueNAS Server</h4>
-                <ul>
-                    <li>4TB ZFS Raid1/Mirror Storage Array</li>
-                    <li>Docker, VMs, Media Streaming</li>
-                    <li>Automated Backups & Snapshots</li>
-                </ul>
-                <p>
-                    I run my own TrueNAS server for storage, virtualization, and media. I'm comfortable with advanced IT setups and troubleshooting.
-                </p>
-                
-                <hr style="border: 1px solid var(--purple-accent); margin: 24px 0;">
-                
-                <h4>🤖 Log Analysis Helper Bot</h4>
-                <p>
-                    An LLM-powered log analysis assistant designed for security education and small Security Operations Centers (SOCs). 
-                    This Python-based tool helps analyze security logs using AI to identify threats and generate actionable insights.
-                </p>
-                <h4>Key Features:</h4>
-                <ul>
-                    <li><strong>Multi-Format Support:</strong> Parses text, JSON, and CSV log files</li>
-                    <li><strong>AI-Powered Analysis:</strong> Integrates with OpenAI, Perplexity, Gemini, DeepSeek, or local HuggingFace models</li>
-                    <li><strong>Security Event Detection:</strong> Identifies common security events and suspicious activities</li>
-                    <li><strong>Simulated Log Generator:</strong> Creates synthetic logs for testing and training</li>
-                    <li><strong>Evaluation Metrics:</strong> Precision/recall/F1 testing harness for accuracy</li>
-                    <li><strong>Plain-Language Summaries:</strong> Generates human-readable security reports</li>
-                </ul>
-                <h4>Technologies:</h4>
-                <div class="skill-grid">
-                    <div class="skill-chip">Python</div>
-                    <div class="skill-chip">AI/LLM</div>
-                    <div class="skill-chip">OpenAI API</div>
-                    <div class="skill-chip">Cybersecurity</div>
-                    <div class="skill-chip">Log Analysis</div>
+            <div style="max-height: 70vh; overflow-y: auto; display: flex; flex-direction: column; gap: 18px; padding-right: 4px;">
+
+                <!-- TrueNAS Card -->
+                <div class="project-card">
+                    <h4>🖥️ TrueNAS Server</h4>
+                    <ul>
+                        <li>4TB ZFS Raid1/Mirror Storage Array</li>
+                        <li>Docker, VMs, Media Streaming</li>
+                        <li>Automated Backups &amp; Snapshots</li>
+                    </ul>
+                    <p style="margin: 8px 0 0;">I run my own TrueNAS server for storage, virtualization, and media. Comfortable with advanced IT setups and troubleshooting.</p>
                 </div>
-                <p>
-                    <strong>Use Case:</strong> This tool is particularly valuable for IT and cybersecurity professionals 
-                    who need to quickly analyze large volumes of security logs. It can process local log files privately 
-                    and supports various AI providers based on your preferences and API availability.
-                </p>
-                <p>
-                    <a href="https://github.com/JrockWolf/LogAnalysisBot" target="_blank" style="color: var(--neon-purple); text-decoration: none; font-weight: bold;">🔗 View on GitHub</a>
-                </p>
+
+                <!-- Log Analysis Card -->
+                <div class="project-card">
+                    <h4>🤖 Log Analysis Helper Bot</h4>
+                    <img src="photo_1_2026-05-05_15-13-56.jpg" class="project-photo" alt="Log Analysis project screenshot" loading="lazy">
+                    <p style="margin: 0 0 10px;">An LLM-powered log analysis assistant for security education and small SOCs. Analyzes security logs using AI to identify threats and generate actionable insights.</p>
+                    <b>Key Features:</b>
+                    <ul style="margin: 6px 0 10px 18px;">
+                        <li><strong>Multi-Format Support:</strong> Parses text, JSON, and CSV log files</li>
+                        <li><strong>AI-Powered Analysis:</strong> Integrates with OpenAI, Perplexity, Gemini, DeepSeek, or local HuggingFace models</li>
+                        <li><strong>Security Event Detection:</strong> Identifies threats and suspicious activities</li>
+                        <li><strong>Simulated Log Generator:</strong> Creates synthetic logs for testing and training</li>
+                        <li><strong>Evaluation Metrics:</strong> Precision/recall/F1 testing harness</li>
+                        <li><strong>Plain-Language Summaries:</strong> Human-readable security reports</li>
+                    </ul>
+                    <div class="skill-grid" style="margin-bottom: 12px;">
+                        <div class="skill-chip">Python</div>
+                        <div class="skill-chip">AI/LLM</div>
+                        <div class="skill-chip">OpenAI API</div>
+                        <div class="skill-chip">Cybersecurity</div>
+                        <div class="skill-chip">Log Analysis</div>
+                    </div>
+                    <a href="https://github.com/JrockWolf/LogAnalysisBot" target="_blank" rel="noopener noreferrer" style="color: var(--neon-purple); text-decoration: none; font-weight: bold;">🔗 View on GitHub</a>
+                </div>
+
             </div>
         `;
     }
