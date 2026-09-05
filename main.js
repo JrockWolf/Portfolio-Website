@@ -45,16 +45,20 @@ document.addEventListener('click', (e) => {
 });
 
 // ── Google Translate Init ─────────────
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement(
+// Register the callback on window before the Google script loads. The script
+// invokes this global callback as soon as it finishes loading.
+window.googleTranslateElementInit = function () {
+    if (!window.google?.translate?.TranslateElement) return;
+
+    new window.google.translate.TranslateElement(
         {
             pageLanguage: 'en',
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
             autoDisplay: false
         },
         'google_translate_element'
     );
-}
+};
 
 // ── Mobile Menu ───────────────────────
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
