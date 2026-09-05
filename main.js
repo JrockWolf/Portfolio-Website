@@ -128,7 +128,8 @@ function initReveal() {
 
 // ── Typed rotating subtitle ──────────
 const subtitles = [
-    'Computer Science Student',
+    'AWS Data Center Technician',
+    'Computer Science Graduate',
     'Cybersecurity Enthusiast',
     'Systems & Networking Nerd',
     'Open Source Tinkerer',
